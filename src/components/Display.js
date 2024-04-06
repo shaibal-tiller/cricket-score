@@ -8,7 +8,9 @@ const Display = () => {
   const max_over = match_settings.max_over
   const max_wicket = match_settings.totalPlayer
 
-  const commentary = localStorage.getItem('commentary')
+
+ 
+
   const [currentScore_1, setCurrentScore_1] = useState(JSON.parse(localStorage.getItem('currentScore_1')) || {});
   const [currentScore_2, setCurrentScore_2] = useState(JSON.parse(localStorage.getItem('currentScore_2')) || {});
   const [is_match_over, set_is_match_over] = useState(false)
@@ -43,6 +45,8 @@ const Display = () => {
       }
     }
   }, [currentScore_1])
+
+
 
   useEffect(() => {
     if (innings == '2nd Innings') {
@@ -94,7 +98,7 @@ const Display = () => {
             </div>}
         </div>)
         :
-        <div className='text-center py-4 text-3xl'> 
+        <div className='text-center py-4 text-3xl'>
           <p>Match Ended</p>
           <p>Team 2 <span className='font-semibold capitalize'>{localStorage.getItem('innings2')}</span></p>
         </div>}
